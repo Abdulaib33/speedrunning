@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <a href="#" id="lien1">HOP</a>
+    </div>
+    <div id="div1"></div>
+
+    <script>
+
+        const lien1 = document.getElementById("lien1")
+        const div1 = document.getElementById("div1")
+
+        lien1.onclick = function() {
+
+            fetch("traitement.php")
+             .then(function(reponsePHP){
+
+                // console.log(reponsePHP.text())
+                return reponsePHP.text()
+
+             })
+              .then(function(code){
+
+                div1.innerHTML = code
+                
+              })
+            
+
+        }
+
+    </script>
+
+</body>
+</html>
