@@ -10,9 +10,13 @@
     <div>
         <a href="#" id="lien1">HOP</a>
     </div>
-    
-    <div id="div1">
 
+    <form id="form1">
+        <div><input type="text" name="id" placeholder="Id"></div>
+        <div><input type="text" name="message" placeholder="message"></div>
+    </form>
+
+    <div id="div1">
     </div>
 
     <script>
@@ -22,7 +26,15 @@
 
         lien1.onclick = function() {
 
-            fetch("traitement.php")
+            const data = new FormData(document.getElementById("form1"))
+            // data.append("id", 1)
+            // data.append("message", "nah m8")
+            data.append("nom_de_la_valeur", "valeur")
+
+            fetch("traitement.php", {
+                method: "POST",
+                body: data
+            })
              .then(function(reponsePHP){
 
                 // console.log(reponsePHP.text())
