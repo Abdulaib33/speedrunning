@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div><a href="#" id="lien1">HOP</a></div>
+    <div id="div1"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+
+        const lien1 = document.getElementById("lien1")
+        const div1 = document.getElementById("div1")
+
+        lien1.onclick = function() {
+
+            const formData = new FormData()
+            formData.append('message', "You Are On The Absolute Truth")
+            formData.append('id', 7)
+
+            axios.post("traitement.php", formData)
+                .then(function(reponseServeur){
+                    div1.innerHTML = reponseServeur.data
+                })
+
+        }
+
+    </script>
+    
+</body>
+</html>
