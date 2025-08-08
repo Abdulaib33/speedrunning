@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div><a href="#" id="lien1">HOP</a></div>
+    <div id="div1"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $('#lien1').click(function(){
+            
+
+        // $.ajax({
+
+        //     url: 'traitement.php',
+        //     method: 'get',
+        //     data: {
+        //         id: 4
+        //     }
+
+        // }).done(function(reponseServeur){   
+
+        //     $('#div1').html(reponseServeur)
+
+        // })
+
+
+
+
+        // $.get('traitement.php', {id: 4}, function(reponseServeur) {
+        //     $('#div1').html(reponseServeur)
+        // })
+
+        $.post('traitement.php', {id: 4}, function(reponseServeur) {
+            $('#div1').html(reponseServeur).hide().slideDown()
+        })
+
+
+
+        })
+
+    </script>
+    
+</body>
+</html>
